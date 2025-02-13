@@ -1,0 +1,13 @@
+[package]
+name = "subscriber-map"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.84"
+
+[dependencies]
+dashmap = "6.1.0"
+futures = "0.3.31"
+pin-project = "1.1.9"
+
+[dev-dependencies]
+tokio = { version = "1.43.0", features = ["full"] }
