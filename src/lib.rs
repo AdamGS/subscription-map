@@ -129,13 +129,14 @@ mod tests {
     #[tokio::test]
     async fn basic_test() {
         let map = SubscriberMap::default();
+        println!("Subscribing to 'hello'");
         let s1 = map.subscribe("hello".to_string());
         let h = tokio::task::spawn(async move {
             s1.await;
             println!("got my message");
         });
 
-        println!("writing to map");
+        println!("writing to map at 'hello'");
         map.insert("hello".to_string(), 5);
 
         _ = h.await;
